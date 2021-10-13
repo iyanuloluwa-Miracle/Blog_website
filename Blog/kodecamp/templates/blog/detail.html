@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    @import url('https://fonts.googleapis.com/css2?family=Raleway:wght@200&display=swap');
+    body{
+        background-color: #fff;
+        font-family: 'Raleway';
+    }
+    h1{
+        margin: 3rem;
+    }
+    h1,h2{
+        text-align: center;
+    }
+    section{
+        margin-top: 4rem;
+        padding: 0 4rem;
+    }
+    span{
+        color: #480052;
+        display: inline-block;
+        margin-right: 1rem;
+    }
+    .leftcolumn {
+        float: left;
+        width: 75%;
+    }
+    .card {
+        background-color: palegreen;
+        padding: 20px;
+        margin-top: 20px;
+        font-size: small;
+    }
+    .row:after {
+        content: "";
+        display: table;
+        clear: both;
+    }        
+    .header {
+        padding: 30px;
+        font-size: 40px;
+        text-align: center;
+        background: blueviolet;
+        color: white;
+    }
+    .footer {
+        padding: 20px;
+        text-align: center;
+        background: blueviolet;
+        margin-top: 20px;
+        color: white;
+    }
+</style>
+<body>
+    <main>
+        <div class="header">
+            <h2>Django Blog created by IYANULOLUWA </h2>
+        </div>
+    </main>
+    <section>
+        <div class="row">
+            <div class="leftcolumn">
+                <div class="card">
+                    <h2>{{post.title}}</h2>
+                    <span>{{post.author}}</span>
+                    <span>{{post.created_date}}</span>
+                    <p>{{post.content}}</p>
+
+                </div>
+            </div>
+        </div>
+       
+    </section>
+   
+    <footer class="footer">
+        <h2>Thanks for visiting</h2>
+
+    </footer>
+</body>
+</html>

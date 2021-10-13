@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="index.css">
+    <title>Document</title>
+</head>
+<body>
+    <style>
+        .header {
+            padding: 30px;
+            font-size: 40px;
+            text-align: center;
+            background: blueviolet;
+            color: white;
+        }
+        .leftcolumn {
+            float: left;
+            width: 75%;
+        }
+        .card {
+            background-color: palegreen;
+            padding: 20px;
+            margin-top: 20px;
+            font-size: small;
+        }
+        .row:after {
+            content: "";
+            display: table;
+            clear: both;
+        }        
+        button{
+            background-color: black;
+            color: #fff;
+            padding: 15px 20px;
+            border-radius: .5rem;
+            border: none;
+            cursor: pointer;
+        }
+        .footer {
+            padding: 20px;
+            text-align: center;
+            background: blueviolet;
+            margin-top: 20px;
+            color: white;
+        }
+        h3{
+            color: palevioletred;
+        }
+        h4{
+            color: white;
+        }
+    </style>
+    <main>
+        <div class="header">
+            <h2>Django Blog created by IYANULOLUWA </h2>
+        </div>
+        <section>
+            {% if posts %}
+            <div class="row">
+                {% for post in posts %}
+                    <div class="leftcolumn">
+                        <div class="card">
+                            <h3>{{post.title}}</h3>
+                            <h4>{{post.author}}</h4>
+                            <h3>{{post.content}}</h3>
+                            <a href="{% url 'kodecamp:detail' post.id %}"><button>Read More</button></a>
+                        </div>
+                       
+                      
+                    </div>
+                {% endfor %}
+            </div>
+            {% else %}
+                <p>No Post to  Display Option!!</p>
+            {% endif %}           
+        </section>
+       
+    </main>
+    <div class="footer">
+        <h2>Thanks for visiting</h2>
+    </div>
+    
+   
+</body>
+</html>
